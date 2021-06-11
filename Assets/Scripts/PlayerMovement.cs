@@ -11,20 +11,11 @@ public class PlayerMovement : MonoBehaviour
 
     // State information
     private bool OnGround;
-    private float HorizontalMovement;
-    private bool JumpInput;
 
     // Components
     public Rigidbody2D rb;
 
-    private void Update()
-    {
-        // check input
-        HorizontalMovement = Input.GetAxisRaw("Horizontal");
-        JumpInput = Input.GetKey(KeyCode.Space);
-    }
-
-    private void FixedUpdate()
+    public void Move(float horizontalMovement, bool jumpInput)
     {
         float xVelocity = rb.velocity.x, yVelocity = rb.velocity.y;
 
@@ -32,17 +23,17 @@ public class PlayerMovement : MonoBehaviour
         if (OnGround) 
         {
             // apply horizontal acceleration
-            xVelocity = Mathf.Clamp(xVelocity + HorizontalMovement * Acceleration, -MaxSpeed, MaxSpeed);
+            xVelocity = Mathf.Clamp(xVelocity + horizontalMovement * Acceleration, -MaxSpeed, MaxSpeed);
 
             // stop player if no input
-            if (HorizontalMovement == 0 || (Mathf.Abs(xVelocity + HorizontalMovement) - Mathf.Abs(xVelocity) + Mathf.Abs(HorizontalMovement)) < 0.00001) {
+            if (horizontalMovement == 0 || (Mathf.Abs(xVelocity + horizontalMovement) - Mathf.Abs(xVelocity) + Mathf.Abs(horizontalMovement)) < 0.00001) {
                 //Debug.Log("stopping, xvel = " + xVelocity + ", horiz.in = " + HorizontalMovement);
                 xVelocity = 0;
             }
         }
 
         // jump only if on the ground
-        if (JumpInput && OnGround)
+        if (jumpInput && OnGround)
         {
             //yVelocity = JumpSpeed;
             yVelocity = Mathf.Sqrt(Mathf.Pow(JumpSpeed, 2) - Mathf.Pow(xVelocity, 2));
