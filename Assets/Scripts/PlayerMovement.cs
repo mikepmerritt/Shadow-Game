@@ -7,12 +7,12 @@ public class PlayerMovement : MonoBehaviour
 
     // Constants
     private const float Acceleration = 0.2f, MaxSpeed = 5f;
-    private const float JumpSpeed = 7f;
+    private const float JumpSpeed = 15f;
 
     // State information
-    public bool OnGround;
+    private bool OnGround;
     private float HorizontalMovement;
-    public bool JumpInput;
+    private bool JumpInput;
 
     // Components
     public Rigidbody2D rb;
@@ -21,39 +21,42 @@ public class PlayerMovement : MonoBehaviour
     {
         // check input
         HorizontalMovement = Input.GetAxisRaw("Horizontal");
-        JumpInput = Input.GetKey(KeyCode.W);
+        JumpInput = Input.GetKey(KeyCode.Space);
     }
 
     private void FixedUpdate()
     {
         float xVelocity = rb.velocity.x, yVelocity = rb.velocity.y;
 
-        // apply horizontal acceleration
-        xVelocity = Mathf.Clamp(xVelocity + HorizontalMovement * Acceleration, -MaxSpeed, MaxSpeed);
+        // ground movement
+        if (OnGround) 
+        {
+            // apply horizontal acceleration
+            xVelocity = Mathf.Clamp(xVelocity + HorizontalMovement * Acceleration, -MaxSpeed, MaxSpeed);
 
-        // stop player if no input
-        if (HorizontalMovement == 0) {
-            xVelocity = xVelocity / 1.25f;
+            // stop player if no input
+            if (HorizontalMovement == 0) {
+                xVelocity = xVelocity / 1.25f;
+            }
         }
 
         // jump only if on the ground
         if (JumpInput && OnGround)
         {
-            yVelocity = JumpSpeed;
+            //yVelocity = JumpSpeed;
+            yVelocity = Mathf.Sqrt(Mathf.Pow(JumpSpeed, 2) - Mathf.Pow(xVelocity, 2));
         }
 
         rb.velocity = new Vector2(xVelocity, yVelocity);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void HitGround()
     {
-        //Debug.Log("Colliding");
         OnGround = true;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void LeaveGround()
     {
-        //Debug.Log("Jumping");
         OnGround = false;
     }
 }
