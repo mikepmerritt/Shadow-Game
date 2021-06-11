@@ -35,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
             xVelocity = Mathf.Clamp(xVelocity + HorizontalMovement * Acceleration, -MaxSpeed, MaxSpeed);
 
             // stop player if no input
-            if (HorizontalMovement == 0) {
-                xVelocity = xVelocity / 1.25f;
+            if (HorizontalMovement == 0 || (Mathf.Abs(xVelocity + HorizontalMovement) - Mathf.Abs(xVelocity) + Mathf.Abs(HorizontalMovement)) < 0.00001) {
+                //Debug.Log("stopping, xvel = " + xVelocity + ", horiz.in = " + HorizontalMovement);
+                xVelocity = 0;
             }
         }
 
