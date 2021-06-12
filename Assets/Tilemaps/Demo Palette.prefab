@@ -41,6 +41,24 @@ Tilemap:
   m_GameObject: {fileID: 29972818184377397}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -2, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 7
+      m_TileSpriteIndex: 7
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -2, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -109,11 +127,13 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 2cc447771a0d4ca4385e8ee6187002bd, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: fa57dd2fc41824e46985c0c8fcf0c9f2, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 8cd03527093f11f418f6c673ff4665a8, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: dce40a038e71ac946bbb4ea745008864, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: da16c9ebf5c92304289641625e50b649, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 903894cc44b64dd409cec5c3d01311ef, type: 3}
   - m_RefCount: 1
@@ -126,8 +146,10 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: d6517c5dc759b8648831dd2d1a06e86c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 8f381ebe937446346bc437143123a9c5, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: ef8dce6561240ec47a6f5e4ba8097c94, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 6
+  - m_RefCount: 8
     m_Data:
       e00: 1
       e01: 0
@@ -146,7 +168,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 6
+  - m_RefCount: 8
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1

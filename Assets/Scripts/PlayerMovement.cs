@@ -100,6 +100,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Hazard")
+        {
+            KillPlayer();
+        }
+    }
+
+    public void KillPlayer()
+    {
+        Stop();
+        if (gameObject.tag == "Player")
+        {
+            // player death anim
+            GetComponentInChildren<LightController>().FadeOut();
+            FindObjectOfType<CameraController>().StopCamera();
+        }
+        else 
+        {
+            // shadow death anim
+        }
+        FindObjectOfType<InputController>().StopInput();
+    }
+
     public bool CheckOnGround()
     {
         return OnGround;

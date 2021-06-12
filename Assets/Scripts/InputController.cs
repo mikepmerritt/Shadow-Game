@@ -16,6 +16,7 @@ public class InputController : MonoBehaviour
     private float HorizontalMovement;
     private bool JumpInput;
     private bool HasActiveShadow;
+    private bool PlayerAlive = true;
 
     private void Awake()
     {
@@ -28,33 +29,36 @@ public class InputController : MonoBehaviour
 
     private void Update()
     {
-        // check input
-        HorizontalMovement = Input.GetAxisRaw("Horizontal");
-        JumpInput = Input.GetButtonDown("Jump");
-
-        if (HasActiveShadow)
+        if (PlayerAlive)
         {
-            // check distance between two
-            float distance = Vector3.Distance(Player.transform.position, Shadow.transform.position);
-            LightController.UpdateRadius(distance);
+            // check input
+            HorizontalMovement = Input.GetAxisRaw("Horizontal");
+            JumpInput = Input.GetButtonDown("Jump");
 
-            // remove shadow if it is lost
-            if (distance > 5f)
+            if (HasActiveShadow)
             {
-                Destroy(Shadow);
-                HasActiveShadow = false;
-            }
-        }
+                // check distance between two
+                float distance = Vector3.Distance(Player.transform.position, Shadow.transform.position);
+                LightController.UpdateRadius(distance);
 
-        if (HasActiveShadow)
-        {
-            PlayerMovement.Move(HorizontalMovement, JumpInput);
-            ShadowMovement.Move(HorizontalMovement, JumpInput);
-        }
-        else
-        {
-            PlayerMovement.Stop();
-            CameraController.StopCamera();
+                // remove shadow if it is lost
+                if (distance > 5f)
+                {
+                    Destroy(Shadow);
+                    HasActiveShadow = false;
+                }
+            }
+
+            if (HasActiveShadow)
+            {
+                PlayerMovement.Move(HorizontalMovement, JumpInput);
+                ShadowMovement.Move(HorizontalMovement, JumpInput);
+            }
+            else
+            {
+                PlayerMovement.KillPlayer();
+                CameraController.StopCamera();
+            }
         }
     }
 
@@ -80,6 +84,11 @@ public class InputController : MonoBehaviour
         Player = newPlayer;
         PlayerMovement = Player.GetComponent<PlayerMovement>();
         LightController = Player.GetComponentInChildren<LightController>();
+    }
+
+    public void StopInput()
+    {
+        PlayerAlive = false;
     }
 
 }

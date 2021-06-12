@@ -28,9 +28,6 @@ public class GameController : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        // GameObject player = GameObject.FindGameObjectWithTag("Player");
-        // // Kill player
-
         GameObject player = Instantiate(PlayerPrefab, Spawnpoint.transform.position, Quaternion.identity);
         InputController.ReplacePlayer(player);
         InputController.RespawnShadow();
