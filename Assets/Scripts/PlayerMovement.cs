@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     // State information
     private bool OnGround;
+    private bool FacingRight = true;
 
     // Components and references
     public Rigidbody2D rb;
@@ -71,7 +72,20 @@ public class PlayerMovement : MonoBehaviour
             OnGround = false;
         }
 
+        if (xVelocity < 0f && FacingRight || xVelocity > 0f && !FacingRight)
+        {
+            FacingRight = !FacingRight;
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
+
         rb.velocity = new Vector2(xVelocity, yVelocity);
+    }
+    
+    public void Stop()
+    {
+        rb.velocity = Vector2.zero;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,7 +95,12 @@ public class PlayerMovement : MonoBehaviour
             TorchBehavior torch = collision.gameObject.GetComponent<TorchBehavior>();
             torch.LightTorch();
 
-            FindObjectOfType<InputController>().RespawnShadow();
+            FindObjectOfType<GameController>().SetSpawnPoint(torch.gameObject);
         }
+    }
+
+    public bool CheckOnGround()
+    {
+        return OnGround;
     }
 }

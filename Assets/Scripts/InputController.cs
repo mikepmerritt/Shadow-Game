@@ -9,6 +9,7 @@ public class InputController : MonoBehaviour
     private PlayerMovement PlayerMovement, ShadowMovement;
     private LightController LightController;
     public GameObject ShadowPrefab;
+    public GameController GameController;
 
     // Game state
     private float HorizontalMovement;
@@ -44,10 +45,14 @@ public class InputController : MonoBehaviour
             }
         }
 
-        PlayerMovement.Move(HorizontalMovement, JumpInput);
         if (HasActiveShadow)
         {
+            PlayerMovement.Move(HorizontalMovement, JumpInput);
             ShadowMovement.Move(HorizontalMovement, JumpInput);
+        }
+        else
+        {
+            PlayerMovement.Stop();
         }
     }
 
@@ -65,4 +70,12 @@ public class InputController : MonoBehaviour
             LightController.ActivateLight();
         }
     }
+
+    public void ReplacePlayer(GameObject newPlayer)
+    {
+        Player = newPlayer;
+        PlayerMovement = Player.GetComponent<PlayerMovement>();
+        LightController = Player.GetComponentInChildren<LightController>();
+    }
+
 }

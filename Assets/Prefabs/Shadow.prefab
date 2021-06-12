@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2794477808662917709}
   m_Layer: 9
   m_Name: Shadow
-  m_TagString: Untagged
+  m_TagString: Shadow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,4 +181,3 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 512
-  InputController: {fileID: 0}
