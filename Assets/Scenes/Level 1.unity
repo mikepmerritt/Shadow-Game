@@ -587,7 +587,8 @@ MonoBehaviour:
   InputController: {fileID: 885718273}
   CameraController: {fileID: 519420034}
   LightController: {fileID: 1278269506}
-  PlayerPrefab: {fileID: 955024034}
+  PlayerPrefab: {fileID: 2140902152423053972, guid: a702bfdf28ebc4943b2840f7cd58a767,
+    type: 3}
   ShadowPrefab: {fileID: 2794477808662917706, guid: bb4d77b4ccb58a64389c5d05e027a064,
     type: 3}
   IsAlive: 1
@@ -13913,7 +13914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &564492823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14086,7 +14087,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 100, y: 100}
+  m_Size: {x: 100, y: 30}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -14100,7 +14101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004092855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 22.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
