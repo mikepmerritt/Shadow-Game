@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class InputController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class InputController : MonoBehaviour
 
     private float HorizontalMovement;
     private bool JumpInput;
+
+    public Light2D Light;
 
     private void Awake()
     {
@@ -23,7 +26,7 @@ public class InputController : MonoBehaviour
         JumpInput = Input.GetButton("Jump");
 
         // check distance between two
-        Debug.Log(Vector3.Distance(Player.transform.position, Shadow.transform.position));
+        Light.pointLightOuterRadius = Mathf.Max(0, 8 - Vector3.Distance(Player.transform.position, Shadow.transform.position));
     }
 
     private void FixedUpdate()
