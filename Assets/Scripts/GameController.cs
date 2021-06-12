@@ -11,13 +11,13 @@ public class GameController : MonoBehaviour
 
     public GameObject PlayerPrefab, ShadowPrefab;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RespawnPlayer();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.R))
+    //     {
+    //         RespawnPlayer();
+    //     }
+    // }
 
     public void SetSpawnPoint(GameObject checkpoint)
     {
