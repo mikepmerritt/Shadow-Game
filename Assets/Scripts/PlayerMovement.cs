@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private const float PlayerWidth = 0.625f / 2f;
 
     // State information
-    private bool OnGround;
+    private bool OnGround = true;
     private bool FacingRight = true;
 
     // Components and references
