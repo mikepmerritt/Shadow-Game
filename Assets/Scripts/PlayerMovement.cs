@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         Collider2D[] detected = Physics2D.OverlapCircleAll(floorCheck.transform.position, PlayerWidth, GroundLayer);
 
-        Debug.Log(detected.Length);
+        //Debug.Log(detected.Length);
 
         bool foundGround = false;
         foreach (Collider2D collider in detected)
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         }
         OnGround = foundGround;
 
-        Debug.Log(gameObject.name + OnGround);
+        //Debug.Log(gameObject.name + OnGround);
 
         // ground movement
         if (OnGround) 
@@ -72,5 +72,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = new Vector2(xVelocity, yVelocity);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Checkpoint")
+        {
+            TorchBehavior torch = collision.gameObject.GetComponent<TorchBehavior>();
+            torch.LightTorch();
+
+            FindObjectOfType<InputController>().RespawnShadow();
+        }
     }
 }

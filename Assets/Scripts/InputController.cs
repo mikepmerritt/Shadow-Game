@@ -8,6 +8,7 @@ public class InputController : MonoBehaviour
     public GameObject Player, Shadow;
     private PlayerMovement PlayerMovement, ShadowMovement;
     private LightController LightController;
+    public GameObject ShadowPrefab;
 
     // Game state
     private float HorizontalMovement;
@@ -47,6 +48,21 @@ public class InputController : MonoBehaviour
         if (HasActiveShadow)
         {
             ShadowMovement.Move(HorizontalMovement, JumpInput);
+        }
+    }
+
+    public void RespawnShadow()
+    {
+        if (HasActiveShadow)
+        {
+            Shadow.transform.position = new Vector3(Player.transform.position.x + 0.25f, Player.transform.position.y + 0.25f, 0f);
+        }
+        else 
+        {
+            Shadow = Instantiate(ShadowPrefab, new Vector3(Player.transform.position.x + 0.25f, Player.transform.position.y + 0.25f, 0f), Quaternion.identity);
+            ShadowMovement = Shadow.GetComponent<PlayerMovement>();
+            HasActiveShadow = true;
+            LightController.ActivateLight();
         }
     }
 }
