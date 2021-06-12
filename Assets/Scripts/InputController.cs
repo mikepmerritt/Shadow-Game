@@ -22,7 +22,7 @@ public class InputController : MonoBehaviour
     {
         PlayerMovement = Player.GetComponent<PlayerMovement>();
         ShadowMovement = Shadow.GetComponent<PlayerMovement>();
-        LightController = Player.GetComponentInChildren<LightController>();
+        LightController = FindObjectOfType<LightController>();
 
         HasActiveShadow = true;
     }
@@ -83,7 +83,7 @@ public class InputController : MonoBehaviour
     {
         Player = newPlayer;
         PlayerMovement = Player.GetComponent<PlayerMovement>();
-        LightController = Player.GetComponentInChildren<LightController>();
+        LightController = FindObjectOfType<LightController>();
     }
 
     public void StopInput()
