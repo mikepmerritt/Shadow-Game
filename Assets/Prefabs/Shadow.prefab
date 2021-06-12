@@ -181,3 +181,4 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 512
+  InputController: {fileID: 0}

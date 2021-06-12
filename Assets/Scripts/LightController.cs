@@ -41,4 +41,10 @@ public class LightController : MonoBehaviour
             }
         }
     }
+
+    public void ActivateLight()
+    {
+        IsFading = false;
+        LightOut = false;
+    }
 }
