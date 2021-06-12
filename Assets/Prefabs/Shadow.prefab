@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 2794477808662917711}
   - component: {fileID: 2794477808662917708}
   - component: {fileID: 2794477808662917709}
+  - component: {fileID: 1423394257}
+  - component: {fileID: 1423394252}
   m_Layer: 9
   m_Name: Shadow
   m_TagString: Shadow
@@ -181,3 +183,36 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!95 &1423394257
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794477808662917706}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9bfef6299a4dbe4294890ee55d4f83e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1423394252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2794477808662917706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e46c8d0f40e614c9e2321e46aab163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Shadow
+  IsInterruptable: 0
