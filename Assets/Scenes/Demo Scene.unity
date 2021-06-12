@@ -1529,6 +1529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Wizard
+  IsInterruptable: 0
 --- !u!95 &466660426
 Animator:
   serializedVersion: 3
@@ -2324,6 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Shadow
+  IsInterruptable: 0
 --- !u!95 &1423394257
 Animator:
   serializedVersion: 3

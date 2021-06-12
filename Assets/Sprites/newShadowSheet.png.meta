@@ -26,6 +26,21 @@ TextureImporter:
   - first:
       213: -5501495899908380190
     second: newShadowSheet_7
+  - first:
+      213: -81779118827726138
+    second: newShadowSheet_8
+  - first:
+      213: 3023955707767033795
+    second: newShadowSheet_9
+  - first:
+      213: -7719478883261731305
+    second: newShadowSheet_10
+  - first:
+      213: 8937524506691715422
+    second: newShadowSheet_11
+  - first:
+      213: 1591095591312752171
+    second: newShadowSheet_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -148,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -169,7 +184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -189,8 +204,8 @@ TextureImporter:
       name: newShadowSheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 48
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -210,8 +225,8 @@ TextureImporter:
       name: newShadowSheet_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -231,8 +246,8 @@ TextureImporter:
       name: newShadowSheet_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 80
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -253,7 +268,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -274,7 +289,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -286,6 +301,111 @@ TextureImporter:
       bones: []
       spriteID: 2e961b090a2c6a3b0800000000000000
       internalID: -5501495899908380190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newShadowSheet_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca9a3023567ddef0800000000000000
+      internalID: -81779118827726138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newShadowSheet_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf08f1d1bf37f920800000000000000
+      internalID: 3023955707767033795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newShadowSheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e2e00fad6eed490800000000000000
+      internalID: -7719478883261731305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newShadowSheet_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5145b09f27780c70800000000000000
+      internalID: 8937524506691715422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newShadowSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ef2e3a205b41610800000000000000
+      internalID: 1591095591312752171
       vertices: []
       indices: 
       edges: []

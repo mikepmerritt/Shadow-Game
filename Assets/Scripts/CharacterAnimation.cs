@@ -9,7 +9,8 @@ public class CharacterAnimation : MonoBehaviour
     private PlayerMovement CharacterMovement;
     public string Name;
     private float XVelocity, YVelocity;
-    private bool SpacePressed, OnGround, IsStopped, IsInterruptable;
+    private bool SpacePressed, OnGround, IsStopped;
+    public bool IsInterruptable;
 
     private void Awake()
     {

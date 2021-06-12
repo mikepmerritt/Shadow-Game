@@ -71,6 +71,8 @@ public class InputController : MonoBehaviour
             HasActiveShadow = true;
             LightController.ActivateLight();
         }
+        Shadow.GetComponent<Animator>().Play("ShadowRespawn");
+        Shadow.GetComponent<CharacterAnimation>().IsInterruptable = false;
     }
 
     public void ReplacePlayer(GameObject newPlayer)

@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -59109433904043024
     second: newWizardSheet_7
+  - first:
+      213: -7643846862955722656
+    second: newWizardSheet_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +130,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -148,7 +151,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -169,7 +172,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -189,8 +192,8 @@ TextureImporter:
       name: newWizardSheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 48
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -210,8 +213,8 @@ TextureImporter:
       name: newWizardSheet_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -231,8 +234,8 @@ TextureImporter:
       name: newWizardSheet_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 80
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -253,7 +256,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -274,7 +277,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -286,6 +289,27 @@ TextureImporter:
       bones: []
       spriteID: 0fb664578400e2ff0800000000000000
       internalID: -59109433904043024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newWizardSheet_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0684a08e6c99be590800000000000000
+      internalID: -7643846862955722656
       vertices: []
       indices: 
       edges: []
