@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             OnGround = false;
         }
 
-        if (xVelocity < 0f && FacingRight || xVelocity > 0f && !FacingRight)
+        if (xVelocity < -0.0001f && FacingRight || xVelocity > 0.0001f && !FacingRight)
         {
             FacingRight = !FacingRight;
             Vector3 scale = transform.localScale;

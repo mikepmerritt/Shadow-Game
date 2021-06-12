@@ -9,7 +9,7 @@ public class CharacterAnimation : MonoBehaviour
     private PlayerMovement CharacterMovement;
     public string Name;
     private float XVelocity, YVelocity;
-    private bool SpacePressed, OnGround, IsStopped;
+    private bool SpacePressed, OnGround;
     public bool IsInterruptable;
 
     private void Awake()
@@ -26,8 +26,7 @@ public class CharacterAnimation : MonoBehaviour
         YVelocity = CharacterRigidbody.velocity.y;
         SpacePressed = Input.GetButtonDown("Jump");
         OnGround = CharacterMovement.CheckOnGround();
-        IsStopped = Mathf.Abs(CharacterRigidbody.velocity.x) < 0.0001;
-
+        
         if(IsInterruptable)
         {
             if(OnGround)
@@ -37,7 +36,7 @@ public class CharacterAnimation : MonoBehaviour
                     CharacterAnimator.Play(Name + "Land");
                     IsInterruptable = false;
                 }
-                else if(!IsStopped)
+                else if(Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
                 {
                     CharacterAnimator.Play(Name + "Walk");
                 }
