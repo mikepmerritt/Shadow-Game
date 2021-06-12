@@ -44,7 +44,7 @@ public class InputController : MonoBehaviour
                 // remove shadow if it is lost
                 if (distance > 5f)
                 {
-                    Destroy(Shadow);
+                    ShadowMovement.KillPlayer();
                     HasActiveShadow = false;
                 }
             }
@@ -89,6 +89,8 @@ public class InputController : MonoBehaviour
     public void StopInput()
     {
         PlayerAlive = false;
+        PlayerMovement.Stop();
+        ShadowMovement.Stop();
     }
 
 }

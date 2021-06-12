@@ -114,12 +114,22 @@ public class PlayerMovement : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             // player death anim
+            GetComponent<Animator>().Play("WizardHit");
+            GetComponent<CharacterAnimation>().IsInterruptable = false;
             GetComponentInChildren<LightController>().FadeOut();
             FindObjectOfType<CameraController>().StopCamera();
+            GameObject.FindGameObjectWithTag("Shadow").GetComponent<Animator>().Play("ShadowHit");
+            GameObject.FindGameObjectWithTag("Shadow").GetComponent<CharacterAnimation>().IsInterruptable = false;
         }
         else 
         {
             // shadow death anim
+            GetComponent<Animator>().Play("ShadowHit");
+            GetComponent<CharacterAnimation>().IsInterruptable = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LightController>().FadeOut();
+            FindObjectOfType<CameraController>().StopCamera();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().Play("WizardHit");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterAnimation>().IsInterruptable = false;
         }
         FindObjectOfType<InputController>().StopInput();
     }
