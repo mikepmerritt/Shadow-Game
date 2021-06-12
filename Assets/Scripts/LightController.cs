@@ -9,6 +9,7 @@ public class LightController : MonoBehaviour
     public GameObject Player, Shadow;
     public Light2D Light;
     private bool IsFading, LightOut;
+    public bool Paused = false;
 
     public void Awake()
     {
@@ -36,21 +37,28 @@ public class LightController : MonoBehaviour
 
     private void Update()
     {
-
-        float xDisplacement = Mathf.Abs(Player.transform.position.x - Shadow.transform.position.x);
-        float xMid = Mathf.Min(Player.transform.position.x, Shadow.transform.position.x) + xDisplacement / 2f;
-
-        float yDisplacement = Mathf.Abs(Player.transform.position.y - Shadow.transform.position.y);
-        float yMid = Mathf.Min(Player.transform.position.y, Shadow.transform.position.y) + yDisplacement / 2f;
-
-        transform.position = new Vector3(xMid, yMid, 0f);
-
-        if (IsFading)
+        if (!LightOut && !Paused && !(Player == null || Shadow == null))
         {
-            Light.pointLightOuterRadius = Mathf.Max(0, Light.pointLightOuterRadius - Time.fixedDeltaTime * 2f);
-            if (Light.pointLightOuterRadius <= 0)
+            float xDisplacement = Mathf.Abs(Player.transform.position.x - Shadow.transform.position.x);
+            float xMid = Mathf.Min(Player.transform.position.x, Shadow.transform.position.x) + xDisplacement / 2f;
+
+            float yDisplacement = Mathf.Abs(Player.transform.position.y - Shadow.transform.position.y);
+            float yMid = Mathf.Min(Player.transform.position.y, Shadow.transform.position.y) + yDisplacement / 2f;
+
+            transform.position = new Vector3(xMid, yMid, 0f);
+
+            if (IsFading)
             {
-                LightOut = true;
+                Light.pointLightOuterRadius = Mathf.Max(0, Light.pointLightOuterRadius - Time.fixedDeltaTime * 2f);
+                if (Light.pointLightOuterRadius <= 0)
+                {
+                    LightOut = true;
+                    Destroy(Player);
+                    Destroy(Shadow);
+                    FindObjectOfType<InputController>().HasActiveShadow = false;
+                    FindObjectOfType<GameController>().IsAlive = false;
+                    FindObjectOfType<CameraController>().StopCamera();
+                }
             }
         }
     }
@@ -59,5 +67,15 @@ public class LightController : MonoBehaviour
     {
         IsFading = false;
         LightOut = false;
+    }
+
+    public void SetPlayer(GameObject player)
+    {
+        Player = player;
+    }
+
+    public void SetShadow(GameObject shadow)
+    {
+        Shadow = shadow;
     }
 }

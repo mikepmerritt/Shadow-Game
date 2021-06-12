@@ -15,7 +15,7 @@ public class InputController : MonoBehaviour
     // Game state
     private float HorizontalMovement;
     private bool JumpInput;
-    private bool HasActiveShadow;
+    public bool HasActiveShadow;
     private bool PlayerAlive = true;
 
     private void Awake()
@@ -91,6 +91,11 @@ public class InputController : MonoBehaviour
         PlayerAlive = false;
         PlayerMovement.Stop();
         ShadowMovement.Stop();
+    }
+
+    public void StartInput()
+    {
+        PlayerAlive = true;
     }
 
 }

@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!Stopped)
+        if (!Stopped && !(Player == null || Shadow == null))
         {
             float xDisplacement = Mathf.Abs(Player.transform.position.x - Shadow.transform.position.x);
             float xMid = Mathf.Min(Player.transform.position.x, Shadow.transform.position.x) + xDisplacement / 2f;
@@ -45,6 +45,11 @@ public class CameraController : MonoBehaviour
     public void StopCamera()
     {
         Stopped = true;
+    }
+
+    public void StartCamera()
+    {
+        Stopped = false;
     }
 
 }
