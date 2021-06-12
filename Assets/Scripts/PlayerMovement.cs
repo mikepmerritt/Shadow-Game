@@ -85,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     
     public void Stop()
     {
+        rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
     }
 

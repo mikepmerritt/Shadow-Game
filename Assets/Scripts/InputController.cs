@@ -10,6 +10,7 @@ public class InputController : MonoBehaviour
     private LightController LightController;
     public GameObject ShadowPrefab;
     public GameController GameController;
+    public CameraController CameraController;
 
     // Game state
     private float HorizontalMovement;
@@ -53,6 +54,7 @@ public class InputController : MonoBehaviour
         else
         {
             PlayerMovement.Stop();
+            CameraController.StopCamera();
         }
     }
 

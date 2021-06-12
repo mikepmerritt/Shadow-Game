@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
 {
 
     public InputController InputController;
+    public CameraController CameraController;
 
     private GameObject Spawnpoint;
 
@@ -34,5 +35,7 @@ public class GameController : MonoBehaviour
         InputController.ReplacePlayer(player);
         InputController.RespawnShadow();
 
+        CameraController.SetPlayer(player);
+        CameraController.SetShadow(GameObject.FindGameObjectWithTag("Shadow"));
     }
 }
