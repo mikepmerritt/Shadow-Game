@@ -27,7 +27,7 @@ public class InputController : MonoBehaviour
     {
         // check input
         HorizontalMovement = Input.GetAxisRaw("Horizontal");
-        JumpInput = Input.GetButton("Jump");
+        JumpInput = Input.GetButtonDown("Jump");
 
         if (HasActiveShadow)
         {
@@ -42,10 +42,7 @@ public class InputController : MonoBehaviour
                 HasActiveShadow = false;
             }
         }
-    }
 
-    private void FixedUpdate()
-    {
         PlayerMovement.Move(HorizontalMovement, JumpInput);
         if (HasActiveShadow)
         {
