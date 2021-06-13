@@ -603,6 +603,7 @@ MonoBehaviour:
   BoxStarts: []
   BoxPrefab: {fileID: 550634055775101606, guid: 0e35f8337c473d745bc08a75ef85279a,
     type: 3}
+  RespawnInstructions: {fileID: 5307896558997961124}
 --- !u!4 &166573309
 Transform:
   m_ObjectHideFlags: 0
@@ -706,7 +707,7 @@ PrefabInstance:
     - target: {fileID: 1715078785577510752, guid: f34c7a4de82146d45a1e52509e9c350f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1715078785577510753, guid: f34c7a4de82146d45a1e52509e9c350f,
         type: 3}
@@ -7709,6 +7710,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 823452e38b5c4c84fa5a34ff04db83e4, type: 3}
+--- !u!95 &5307896558997961124 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4111018029604100052, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5307896558997961123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7571639239120087252
 PrefabInstance:
   m_ObjectHideFlags: 0

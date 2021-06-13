@@ -847,6 +847,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &139252371 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4111018029604100052, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 139252369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &166573307
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +894,7 @@ MonoBehaviour:
   BoxStarts: []
   BoxPrefab: {fileID: 550634055775101606, guid: 0e35f8337c473d745bc08a75ef85279a,
     type: 3}
+  RespawnInstructions: {fileID: 139252371}
 --- !u!4 &166573309
 Transform:
   m_ObjectHideFlags: 0
