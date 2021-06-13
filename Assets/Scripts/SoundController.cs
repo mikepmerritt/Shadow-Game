@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundController : MonoBehaviour
 {
     public AudioClip Jump, Light, Die, Button, Lift, Drop, Stairs;
     public AudioSource Source;
+    public Image AudioButton;
+    public Sprite AudioOff, AudioOn;
 
     public void PlayJump()
     {
@@ -96,6 +99,20 @@ public class SoundController : MonoBehaviour
         else
         {
             Source.PlayOneShot(Stairs);
+        }
+    }
+
+    public void ToggleSound()
+    {
+        if (Source.volume != 0)
+        {
+            Source.volume = 0;
+            AudioButton.sprite = AudioOff;
+        }
+        else
+        {
+            Source.volume = 0.5f;
+            AudioButton.sprite = AudioOn;
         }
     }
 }
