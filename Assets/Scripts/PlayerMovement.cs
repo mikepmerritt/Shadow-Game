@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -100,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.tag == "Finish")
         {
-            Debug.Log("Door.");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
