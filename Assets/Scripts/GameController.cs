@@ -34,8 +34,8 @@ public class GameController : MonoBehaviour
             ReloadBoxes();
         }
 
-        if (GameObject.FindGameObjectWithTag("Player").transform.position.y < -20f
-            || GameObject.FindGameObjectWithTag("Shadow").transform.position.y < -20f)
+        if (IsAlive && (GameObject.FindGameObjectWithTag("Player").transform.position.y < -20f
+            || GameObject.FindGameObjectWithTag("Shadow").transform.position.y < -20f))
         {
             IsAlive = false;
         }
@@ -82,6 +82,8 @@ public class GameController : MonoBehaviour
         LightController.SetPlayer(player);
         LightController.SetShadow(shadow);
         LightController.Paused = false;
+
+        IsAlive = true;
     }
 
     public void ReloadBoxes()
