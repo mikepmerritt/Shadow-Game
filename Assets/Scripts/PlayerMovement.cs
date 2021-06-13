@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             OnGround = false;
         }
 
-        if (xVelocity < -0.0001f && FacingRight || xVelocity > 0.0001f && !FacingRight)
+        if (xVelocity < -0.0001f && FacingRight && horizontalMovement < 0 || xVelocity > 0.0001f && !FacingRight && horizontalMovement > 0)
         {
             FacingRight = !FacingRight;
             Vector3 scale = transform.localScale;
@@ -97,6 +97,10 @@ public class PlayerMovement : MonoBehaviour
             torch.LightTorch();
 
             FindObjectOfType<GameController>().SetSpawnPoint(torch.gameObject);
+        }
+        else if (collision.tag == "Finish")
+        {
+            Debug.Log("Door.");
         }
     }
 
