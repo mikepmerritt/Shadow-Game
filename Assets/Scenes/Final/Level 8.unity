@@ -7598,6 +7598,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 492267633}
+    - target: {fileID: 5307896557961948021, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSound
+      objectReference: {fileID: 0}
     - target: {fileID: 5307896559929537472, guid: 823452e38b5c4c84fa5a34ff04db83e4,
         type: 3}
       propertyPath: m_Pivot.x

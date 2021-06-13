@@ -9,6 +9,21 @@ public class SoundController : MonoBehaviour
     public AudioSource Source;
     public Image AudioButton;
     public Sprite AudioOff, AudioOn;
+    public static bool SoundEnabled = true;
+
+    public void Start()
+    {
+        if (!SoundEnabled)
+        {
+            Source.volume = 0;
+            AudioButton.sprite = AudioOff;
+        }
+        else
+        {
+            Source.volume = 0.5f;
+            AudioButton.sprite = AudioOn;
+        }
+    }
 
     public void PlayJump()
     {
@@ -104,15 +119,17 @@ public class SoundController : MonoBehaviour
 
     public void ToggleSound()
     {
-        if (Source.volume != 0)
+        if (SoundEnabled)
         {
             Source.volume = 0;
             AudioButton.sprite = AudioOff;
+            SoundEnabled = false;
         }
         else
         {
             Source.volume = 0.5f;
             AudioButton.sprite = AudioOn;
+            SoundEnabled = true;
         }
     }
 }

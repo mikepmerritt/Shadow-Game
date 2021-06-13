@@ -5750,6 +5750,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 253918f3cfb88264f998e9eaf38cc698, type: 3}
+--- !u!114 &1606757321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7322186945946194608, guid: 253918f3cfb88264f998e9eaf38cc698,
+    type: 3}
+  m_PrefabInstance: {fileID: 1606757320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734c8631300e0fc46b16a599cbe2216a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1646233476
 GameObject:
   m_ObjectHideFlags: 0
@@ -8801,6 +8813,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5307896557961948021, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1606757321}
+    - target: {fileID: 5307896557961948021, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSound
+      objectReference: {fileID: 0}
     - target: {fileID: 5307896559929537472, guid: 823452e38b5c4c84fa5a34ff04db83e4,
         type: 3}
       propertyPath: m_Pivot.x
