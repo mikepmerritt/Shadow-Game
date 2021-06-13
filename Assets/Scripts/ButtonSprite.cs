@@ -24,6 +24,7 @@ public class ButtonSprite : MonoBehaviour
     private void ButtonDown(object sender, EventArgs e)
     {
         ButtonRenderer.sprite = Down;
+        FindObjectOfType<SoundController>().PlayButton();
         ButtonBehavior.OnButtonDown -= ButtonDown;
     }
 }

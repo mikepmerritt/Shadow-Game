@@ -28,6 +28,7 @@ public class TorchBehavior : MonoBehaviour
         TargetRadius = 2f;
 
         Lit = true;
+        FindObjectOfType<SoundController>().PlayLight();
     }
 
     public void UnlightTorch()

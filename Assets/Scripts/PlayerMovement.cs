@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
             //yVelocity = JumpSpeed;
             yVelocity = Mathf.Sqrt(Mathf.Pow(JumpSpeed, 2) - Mathf.Pow(xVelocity, 2));
             OnGround = false;
+            FindObjectOfType<SoundController>().PlayJump();
         }
 
         if (xVelocity < -0.0001f && FacingRight && horizontalMovement < 0 || xVelocity > 0.0001f && !FacingRight && horizontalMovement > 0)
@@ -109,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
             // make player taller with magic numbers
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0.53f);
             ((BoxCollider2D) playerCollider).size = new Vector2(((BoxCollider2D) playerCollider).size.x, 1.94f);
+
+            FindObjectOfType<SoundController>().PlayLift();
         }
 
     }
@@ -124,6 +127,8 @@ public class PlayerMovement : MonoBehaviour
             // make player shorter with magic numbers
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0.03f);
             ((BoxCollider2D) playerCollider).size = new Vector2(((BoxCollider2D) playerCollider).size.x, 0.935f);
+
+            FindObjectOfType<SoundController>().PlayDrop();
         }
     }
     
@@ -144,6 +149,8 @@ public class PlayerMovement : MonoBehaviour
         else if (collision.tag == "Finish")
         {
             FindObjectOfType<SceneTransitioner>().LoadNextLevel();
+
+            FindObjectOfType<SoundController>().PlayStairs();
         }
     }
 
@@ -167,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
             // FindObjectOfType<CameraController>().StopCamera();
             GameObject.FindGameObjectWithTag("Shadow").GetComponent<Animator>().Play("ShadowHit");
             GameObject.FindGameObjectWithTag("Shadow").GetComponent<CharacterAnimation>().IsInterruptable = false;
+            FindObjectOfType<SoundController>().PlayDie();
         }
         else 
         {
