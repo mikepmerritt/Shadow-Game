@@ -60,11 +60,11 @@ public class InputController : MonoBehaviour
                 // CameraController.StopCamera();
             }
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetAxisRaw("Vertical") > 0f)
             {
                 PlayerMovement.Grab();
             }
-            else if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetAxisRaw("Vertical") < 0f)
             {
                 PlayerMovement.Place();
             }
