@@ -105,6 +105,10 @@ public class PlayerMovement : MonoBehaviour
             GameObject box = Instantiate(BoxPrefab, new Vector3(transform.position.x, transform.position.y + 1, 0f), Quaternion.identity);
             box.transform.SetParent(transform);
             Destroy(oldBox);
+
+            // make player taller with magic numbers
+            playerCollider.offset = new Vector2(playerCollider.offset.x, 0.53f);
+            ((BoxCollider2D) playerCollider).size = new Vector2(((BoxCollider2D) playerCollider).size.x, 1.94f);
         }
 
     }
@@ -116,6 +120,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(BoxPrefab, transform.position, Quaternion.identity);
             Destroy(box.gameObject);
+            
+            // make player shorter with magic numbers
+            playerCollider.offset = new Vector2(playerCollider.offset.x, 0.03f);
+            ((BoxCollider2D) playerCollider).size = new Vector2(((BoxCollider2D) playerCollider).size.x, 0.935f);
         }
     }
     

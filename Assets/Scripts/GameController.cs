@@ -33,6 +33,12 @@ public class GameController : MonoBehaviour
             RespawnPlayer();
             ReloadBoxes();
         }
+
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.y < -20f
+            || GameObject.FindGameObjectWithTag("Shadow").transform.position.y < -20f)
+        {
+            IsAlive = false;
+        }
     }
 
     public void SetSpawnPoint(GameObject checkpoint)
