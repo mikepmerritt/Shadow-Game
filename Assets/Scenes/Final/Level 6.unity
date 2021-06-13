@@ -600,6 +600,7 @@ MonoBehaviour:
   Boxes: []
   BoxStarts: []
   BoxPrefab: {fileID: 0}
+  RespawnInstructions: {fileID: 1837863415}
 --- !u!4 &166573309
 Transform:
   m_ObjectHideFlags: 0
@@ -8015,6 +8016,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1837863415 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4111018029604100052, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1837863413}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1917997051
 GameObject:
   m_ObjectHideFlags: 0

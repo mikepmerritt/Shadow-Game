@@ -731,6 +731,7 @@ MonoBehaviour:
   Boxes: []
   BoxStarts: []
   BoxPrefab: {fileID: 0}
+  RespawnInstructions: {fileID: 1910656151}
 --- !u!4 &166573309
 Transform:
   m_ObjectHideFlags: 0
@@ -6181,6 +6182,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1910656151 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4111018029604100052, guid: 823452e38b5c4c84fa5a34ff04db83e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 104484854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2030380706
 PrefabInstance:
   m_ObjectHideFlags: 0

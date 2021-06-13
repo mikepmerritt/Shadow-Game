@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public List<GameObject> Boxes;
     public List<Vector3> BoxStarts;
     public GameObject BoxPrefab;
+    public Animator RespawnInstructions;
+    private bool IsTextOnScreen;
 
     private void Start()
     {
@@ -38,6 +40,17 @@ public class GameController : MonoBehaviour
             || GameObject.FindGameObjectWithTag("Shadow").transform.position.y < -20f))
         {
             IsAlive = false;
+        }
+
+        if (!IsAlive && !IsTextOnScreen)
+        {
+            RespawnInstructions.SetTrigger("Appear");
+            IsTextOnScreen = true;
+        }
+        else if (IsAlive && IsTextOnScreen)
+        {
+            RespawnInstructions.SetTrigger("Disappear");
+            IsTextOnScreen = false;
         }
     }
 
