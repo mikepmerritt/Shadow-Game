@@ -18,8 +18,9 @@ public class PlayerMovement : MonoBehaviour
     // Components and references
     public Rigidbody2D rb;
     public Collider2D playerCollider;
-    public GameObject floorCheck;
+    public GameObject floorCheck, frontCheck;
     public LayerMask GroundLayer;
+    public GameObject BoxPrefab;
 
     public void Move(float horizontalMovement, bool jumpInput)
     {
@@ -82,6 +83,39 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.velocity = new Vector2(xVelocity, yVelocity);
+    }
+
+    public void Grab()
+    {
+        Collider2D[] detected = Physics2D.OverlapCircleAll(frontCheck.transform.position, PlayerWidth);
+
+        bool foundBox = false;
+        GameObject oldBox = null;
+        foreach (Collider2D collider in detected)
+        {
+            if (collider.tag == "Carryable" && collider.gameObject.layer != gameObject.layer) 
+            {
+                foundBox = true;
+                oldBox = collider.gameObject;
+            }
+        }
+        if (foundBox)
+        {
+            GameObject box = Instantiate(BoxPrefab, new Vector3(transform.position.x, transform.position.y + 1, 0f), Quaternion.identity);
+            box.transform.SetParent(transform);
+            Destroy(oldBox);
+        }
+
+    }
+
+    public void Place()
+    {
+        EmptyBoxScript box = GetComponentInChildren<EmptyBoxScript>();
+        if (box != null)
+        {
+            Instantiate(BoxPrefab, transform.position, Quaternion.identity);
+            Destroy(box.gameObject);
+        }
     }
     
     public void Stop()

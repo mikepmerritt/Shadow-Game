@@ -8,6 +8,7 @@ TagManager:
   - Hazard
   - Checkpoint
   - Shadow
+  - Carryable
   layers:
   - Default
   - TransparentFX

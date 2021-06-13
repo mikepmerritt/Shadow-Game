@@ -59,6 +59,15 @@ public class InputController : MonoBehaviour
                 PlayerMovement.KillPlayer();
                 // CameraController.StopCamera();
             }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                PlayerMovement.Grab();
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                PlayerMovement.Place();
+            }
         }
     }
 

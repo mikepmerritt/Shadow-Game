@@ -14,11 +14,24 @@ public class GameController : MonoBehaviour
     public GameObject PlayerPrefab, ShadowPrefab;
     public bool IsAlive = true;
 
+    public List<GameObject> Boxes;
+    public List<Vector3> BoxStarts;
+    public GameObject BoxPrefab;
+
+    private void Start()
+    {
+        foreach (GameObject box in Boxes)
+        {
+            BoxStarts.Add(box.transform.position);
+        }
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R) && !IsAlive)
         {
             RespawnPlayer();
+            ReloadBoxes();
         }
     }
 
@@ -55,5 +68,29 @@ public class GameController : MonoBehaviour
         LightController.SetPlayer(player);
         LightController.SetShadow(shadow);
         LightController.Paused = false;
+    }
+
+    public void ReloadBoxes()
+    {
+        // clear old boxes from list
+        while (Boxes.Count != 0) 
+        {
+            GameObject lostBox = Boxes[0];
+            Boxes.RemoveAt(0);
+            Destroy(lostBox);
+        }
+
+        // clear any stray boxes
+        GameObject[] strayBoxes = GameObject.FindGameObjectsWithTag("Carryable");
+        for (int i = 0; i < strayBoxes.Length; i++)
+        {
+            Destroy(strayBoxes[i]);
+        }
+
+        // repopulate boxes
+        foreach (Vector3 position in BoxStarts)
+        {
+            Boxes.Add(Instantiate(BoxPrefab, position, Quaternion.identity));
+        }
     }
 }
