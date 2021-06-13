@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(BoxPrefab, transform.position, Quaternion.identity);
             Destroy(box.gameObject);
-            
+
             // make player shorter with magic numbers
             playerCollider.offset = new Vector2(playerCollider.offset.x, 0.03f);
             ((BoxCollider2D) playerCollider).size = new Vector2(((BoxCollider2D) playerCollider).size.x, 0.935f);
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.tag == "Finish")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            FindObjectOfType<SceneTransitioner>().LoadNextLevel();
         }
     }
 
