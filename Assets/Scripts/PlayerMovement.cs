@@ -101,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (foundBox)
         {
+            oldBox.GetComponent<EmptyBoxScript>().CheckAbove();
             GameObject box = Instantiate(BoxPrefab, new Vector3(transform.position.x, transform.position.y + 1, 0f), Quaternion.identity);
             box.transform.SetParent(transform);
             Destroy(oldBox);
