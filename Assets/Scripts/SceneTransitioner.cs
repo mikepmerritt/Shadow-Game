@@ -9,14 +9,6 @@ public class SceneTransitioner : MonoBehaviour
     public Animator Animator;
     public float AnimationTime;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            LoadNextLevel();
-        }
-    }
-
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
