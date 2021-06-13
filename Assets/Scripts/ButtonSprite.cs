@@ -13,7 +13,7 @@ public class ButtonSprite : MonoBehaviour
     {
         ButtonRenderer = GetComponent<SpriteRenderer>();
         ButtonBehavior.OnButtonDown += ButtonDown;
-        ButtonBehavior.OnButtonUp += ButtonUp;
+        // ButtonBehavior.OnButtonUp += ButtonUp;
     }
 
     private void ButtonUp(object sender, EventArgs e)
@@ -24,5 +24,6 @@ public class ButtonSprite : MonoBehaviour
     private void ButtonDown(object sender, EventArgs e)
     {
         ButtonRenderer.sprite = Down;
+        ButtonBehavior.OnButtonDown -= ButtonDown;
     }
 }
