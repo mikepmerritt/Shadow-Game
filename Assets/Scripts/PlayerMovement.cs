@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Animator>().Play("WizardHit");
             GetComponent<CharacterAnimation>().IsInterruptable = false;
             FindObjectOfType<LightController>().FadeOut();
-            FindObjectOfType<CameraController>().StopCamera();
+            // FindObjectOfType<CameraController>().StopCamera();
             GameObject.FindGameObjectWithTag("Shadow").GetComponent<Animator>().Play("ShadowHit");
             GameObject.FindGameObjectWithTag("Shadow").GetComponent<CharacterAnimation>().IsInterruptable = false;
         }
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Animator>().Play("ShadowHit");
             GetComponent<CharacterAnimation>().IsInterruptable = false;
             FindObjectOfType<LightController>().FadeOut();
-            FindObjectOfType<CameraController>().StopCamera();
+            // FindObjectOfType<CameraController>().StopCamera();
             GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().Play("WizardHit");
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterAnimation>().IsInterruptable = false;
         }

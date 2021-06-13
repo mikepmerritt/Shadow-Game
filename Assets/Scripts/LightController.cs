@@ -57,7 +57,7 @@ public class LightController : MonoBehaviour
                     Destroy(Shadow);
                     FindObjectOfType<InputController>().HasActiveShadow = false;
                     FindObjectOfType<GameController>().IsAlive = false;
-                    FindObjectOfType<CameraController>().StopCamera();
+                    // FindObjectOfType<CameraController>().StopCamera();
                 }
             }
         }
