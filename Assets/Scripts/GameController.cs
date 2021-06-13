@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
 
     public InputController InputController;
-    public CameraController CameraController;
+    // public CameraController CameraController;
     public LightController LightController;
 
     private GameObject Spawnpoint;
@@ -28,13 +28,13 @@ public class GameController : MonoBehaviour
         Spawnpoint = checkpoint;
   
         GameObject shadow = GameObject.FindGameObjectWithTag("Shadow");
-        CameraController.SetShadow(shadow);
+        // CameraController.SetShadow(shadow);
         LightController.SetShadow(shadow);
     }
 
     public void RespawnPlayer()
     {
-        CameraController.StopCamera();
+        // CameraController.StopCamera();
         LightController.Paused = true;
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         Destroy(GameObject.FindGameObjectWithTag("Shadow"));
@@ -47,9 +47,9 @@ public class GameController : MonoBehaviour
 
         GameObject shadow = GameObject.FindGameObjectWithTag("Shadow");
 
-        CameraController.SetPlayer(player);
-        CameraController.SetShadow(shadow);
-        CameraController.StartCamera();
+        // CameraController.SetPlayer(player);
+        // CameraController.SetShadow(shadow);
+        // CameraController.StartCamera();
 
         LightController.ActivateLight();
         LightController.SetPlayer(player);
