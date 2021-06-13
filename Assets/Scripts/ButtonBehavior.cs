@@ -22,7 +22,7 @@ public class ButtonBehavior : MonoBehaviour
         bool foundObject = false;
         foreach (Collider2D collider in detected)
         {
-            if (collider != ButtonCollider && collider.gameObject.tag != "Ground")
+            if (collider != ButtonCollider && collider.gameObject.tag != "Ground" && collider.gameObject.tag != "Checkpoint")
             {
                 if (collider.gameObject.layer == gameObject.layer)
                 {
