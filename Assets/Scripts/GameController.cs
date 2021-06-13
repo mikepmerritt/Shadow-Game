@@ -37,12 +37,20 @@ public class GameController : MonoBehaviour
 
     public void SetSpawnPoint(GameObject checkpoint)
     {
-        InputController.RespawnShadow();
-        Spawnpoint = checkpoint;
-  
-        GameObject shadow = GameObject.FindGameObjectWithTag("Shadow");
-        // CameraController.SetShadow(shadow);
-        LightController.SetShadow(shadow);
+        if (!checkpoint.GetComponent<TorchBehavior>().IsLit())
+        {
+            checkpoint.GetComponent<TorchBehavior>().LightTorch();
+            if (Spawnpoint != null) 
+            {
+                Spawnpoint.GetComponent<TorchBehavior>().UnlightTorch();
+            }
+            InputController.RespawnShadow();
+            Spawnpoint = checkpoint;
+    
+            GameObject shadow = GameObject.FindGameObjectWithTag("Shadow");
+            // CameraController.SetShadow(shadow);
+            LightController.SetShadow(shadow);
+        }
     }
 
     public void RespawnPlayer()

@@ -130,7 +130,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Checkpoint")
         {
             TorchBehavior torch = collision.gameObject.GetComponent<TorchBehavior>();
-            torch.LightTorch();
 
             FindObjectOfType<GameController>().SetSpawnPoint(torch.gameObject);
         }
