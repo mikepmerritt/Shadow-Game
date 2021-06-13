@@ -60,3 +60,6 @@ crashlytics-build.properties
 
 # VSCode files
 .vscode/
+
+# New EditorUserSettings file
+/UserSettings/
