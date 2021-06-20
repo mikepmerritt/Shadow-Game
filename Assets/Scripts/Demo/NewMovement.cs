@@ -33,7 +33,7 @@ public class NewMovement : MonoBehaviour
         hIn = Input.GetAxisRaw("Horizontal");
         vIn = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
             ApplyJumpForce();
 
         // sprite dir
@@ -103,7 +103,7 @@ public class NewMovement : MonoBehaviour
     {
         if (OnGround)
         {
-            rb.velocity += Vector2.up * JumpStrength;
+            rb.velocity = Vector2.up * JumpStrength;
             CoyoteTimeAvailable = false;
             CoyoteTimeActive = false;
         }
