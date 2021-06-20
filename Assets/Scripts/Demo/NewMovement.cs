@@ -14,6 +14,7 @@ public class NewMovement : MonoBehaviour
     public float JumpStrength;
     // different gravity constants for parts of jump
     public float ClimbGravity, HangGravity, FallGravity;
+    public float LowJumpFactor;
     // constants to check for transitions in jump arcs
     public float HangVelocity;
     // velocity state variables
@@ -33,7 +34,7 @@ public class NewMovement : MonoBehaviour
         hIn = Input.GetAxisRaw("Horizontal");
         vIn = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
             ApplyJumpForce();
 
         // sprite dir
@@ -80,7 +81,7 @@ public class NewMovement : MonoBehaviour
             // climb
             if (rb.velocity.y > 0f && rb.velocity.y > HangVelocity)
             {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (ClimbGravity - 1) * Time.fixedDeltaTime;
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (ClimbGravity * (Input.GetButton("Jump") ?  1 : LowJumpFactor) - 1) * Time.fixedDeltaTime;
             }
             // fall
             else if (rb.velocity.y < 0f && rb.velocity.y < -HangVelocity)

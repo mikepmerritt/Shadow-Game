@@ -1153,6 +1153,7 @@ MonoBehaviour:
   ClimbGravity: 2.5
   HangGravity: 6
   FallGravity: 4.25
+  LowJumpFactor: 4
   HangVelocity: 5
   XVel: 0
   YVel: 0
