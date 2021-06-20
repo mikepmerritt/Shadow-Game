@@ -52,10 +52,7 @@ public class InputController : MonoBehaviour
                     ShadowMovement.KillPlayer();
                     HasActiveShadow = false;
                 }
-            }
-
-            if (HasActiveShadow)
-            {
+                
                 PlayerMovement.Move(HorizontalMovement, JumpInput);
                 ShadowMovement.Move(HorizontalMovement, JumpInput);
             }
