@@ -22,10 +22,15 @@ public class GameStateManager : MonoBehaviour
     // active object information
     public GameObject Checkpoint, Player, Shadow;
 
+    // light controller events
+    public NewLightController LightController;
+
     private void Start()
     {
         this.OnDeath += DestroyPlayers;
         this.OnRespawn += RespawnPlayers;
+
+        LightController.OnSeparate += DestroyPlayersEvent;
     }
 
     private void Update()
@@ -45,6 +50,12 @@ public class GameStateManager : MonoBehaviour
     {
         Destroy(Player);
         Destroy(Shadow);
+    }
+
+    private void DestroyPlayersEvent(object sender, EventArgs e)
+    {
+        DestroyPlayers(sender, e);
+        OnDeath?.Invoke(this, EventArgs.Empty);
     }
 
     private void RespawnPlayers(object sender, OnRespawnArgs e)

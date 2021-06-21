@@ -11,7 +11,10 @@ public class NewLightController : MonoBehaviour
     public GameObject Player, Shadow;
     public Light2D Light;
 
-    public float MaxRadius;
+    public float MaxRadius, MinRadius;
+
+    // separation event
+    public event EventHandler OnSeparate;
 
     private void Start()
     {
@@ -25,6 +28,11 @@ public class NewLightController : MonoBehaviour
         {
             Light.transform.position = (Player.transform.position + Shadow.transform.position) / 2f;
             Light.pointLightOuterRadius = Mathf.Max(0f, MaxRadius - Vector3.Distance(Player.transform.position, Shadow.transform.position));
+
+            if (Light.pointLightOuterRadius <= MinRadius)
+            {
+                OnSeparate?.Invoke(this, EventArgs.Empty);
+            }
         }
     }
 

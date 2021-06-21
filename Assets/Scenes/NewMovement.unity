@@ -1182,6 +1182,7 @@ MonoBehaviour:
   Checkpoint: {fileID: 0}
   Player: {fileID: 1493417732}
   Shadow: {fileID: 614156258}
+  LightController: {fileID: 1853517116}
 --- !u!4 &1118415023
 Transform:
   m_ObjectHideFlags: 0
@@ -1936,6 +1937,7 @@ MonoBehaviour:
   Shadow: {fileID: 614156258}
   Light: {fileID: 1853517117}
   MaxRadius: 8
+  MinRadius: 3
 --- !u!114 &1853517117
 MonoBehaviour:
   m_ObjectHideFlags: 0
