@@ -9,25 +9,25 @@ public class NewMovement : MonoBehaviour
     public Collider2D coll;
 
     // horizontal constants
-    public float HStartAccel, HStopAccel, HMaxVel;
+    private float HStartAccel, HStopAccel, HMaxVel = 5f;
     // vertical constants
-    public float JumpStrength;
+    private float JumpStrength = 11f;
     // different gravity constants for parts of jump
-    public float ClimbGravity, HangGravity, FallGravity;
-    public float LowJumpFactor;
+    private float ClimbGravity = 2.5f, HangGravity = 6f, FallGravity = 4.25f;
+    private float LowJumpFactor = 4f;
     // constants to check for transitions in jump arcs
-    public float HangVelocity;
+    private float HangVelocity = 5f;
     // velocity state variables
     public float XVel, YVel;
     // input containers
-    public float hIn, vIn;
+    private float hIn, vIn;
 
     public bool OnGround;
     public bool FacingRight = true;
 
     public bool CoyoteTimeAvailable, CoyoteTimeActive;
     public float CoyoteTimer;
-    public float CoyoteTimeDuration;
+    private float CoyoteTimeDuration = 0.08f;
 
     private void Update()
     {
@@ -96,7 +96,6 @@ public class NewMovement : MonoBehaviour
         }
 
         // apply movement to player
-        //rb.MovePosition((Vector2) transform.position + new Vector2(XVel * Time.fixedDeltaTime, YVel * Time.fixedDeltaTime));
         rb.velocity = new Vector2(XVel, rb.velocity.y);
     }
 
@@ -170,12 +169,12 @@ public class NewMovement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos() 
-    {
-        float boxHeight = 0.05f;
-        Vector2 position = new Vector2(transform.position.x + (FacingRight ? ((BoxCollider2D) coll).offset.x : -((BoxCollider2D) coll).offset.x), transform.position.y + ((BoxCollider2D) coll).offset.y - ((BoxCollider2D) coll).size.y / 2f - boxHeight / 2f);
-        Vector2 size = new Vector2(((BoxCollider2D) coll).size.x - 0.05f, boxHeight);
-        Gizmos.DrawCube((Vector3) position, (Vector3) size);
-    }
+    // private void OnDrawGizmos() 
+    // {
+    //     float boxHeight = 0.05f;
+    //     Vector2 position = new Vector2(transform.position.x + (FacingRight ? ((BoxCollider2D) coll).offset.x : -((BoxCollider2D) coll).offset.x), transform.position.y + ((BoxCollider2D) coll).offset.y - ((BoxCollider2D) coll).size.y / 2f - boxHeight / 2f);
+    //     Vector2 size = new Vector2(((BoxCollider2D) coll).size.x - 0.05f, boxHeight);
+    //     Gizmos.DrawCube((Vector3) position, (Vector3) size);
+    // }
 
 }
