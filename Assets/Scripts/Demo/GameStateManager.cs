@@ -42,8 +42,8 @@ public class GameStateManager : MonoBehaviour
             OnDeath?.Invoke(this, EventArgs.Empty);
             OnRespawn?.Invoke(this, new OnRespawnArgs
             {
-                Player = Instantiate(PlayerPrefab),
-                Shadow = Instantiate(ShadowPrefab)
+                Player = Instantiate(PlayerPrefab, Checkpoint.transform.position, Quaternion.identity),
+                Shadow = Instantiate(ShadowPrefab, Checkpoint.transform.position, Quaternion.identity)
             });
         }
     }
