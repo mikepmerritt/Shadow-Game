@@ -31,6 +31,8 @@ public class GameStateManager : MonoBehaviour
         this.OnRespawn += RespawnPlayers;
 
         LightController.OnSeparate += DestroyPlayersEvent;
+
+        NewTorch.OnTorchLit += ChangeCheckpoint;
     }
 
     private void Update()
@@ -62,5 +64,15 @@ public class GameStateManager : MonoBehaviour
     {
         Player = e.Player;
         Shadow = e.Shadow;
+    }
+
+    private void ChangeCheckpoint(object sender, NewTorch.OnTorchLitArgs e)
+    {
+        if (Checkpoint != null)
+        {
+            Checkpoint.GetComponent<NewTorch>().DisableTorch();
+        }
+        Checkpoint = e.ActiveTorch;
+        Checkpoint.GetComponent<NewTorch>().ActivateTorch();
     }
 }
